@@ -62,9 +62,71 @@
   li { margin-bottom: 6px; }
   footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--soft); }
   @media (max-width: 380px) { .facts { grid-template-columns: minmax(0, 1fr); } }
+
+  /* --- caricamento e apertura --- */
+  .loader { display: none; }
+  .js .loader {
+    display: flex; position: fixed; inset: 0; z-index: 50; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    background: var(--paper); transition: opacity .7s ease, visibility 0s linear .7s;
+  }
+  .js .loader.done { opacity: 0; visibility: hidden; }
+  .js .loader.done .glass { transform: scale(1.08); }
+  .glass { width: 64px; height: 100px; transition: transform .7s ease; overflow: visible; }
+  .glass .drop { animation: drop .5s cubic-bezier(.5,0,.9,.4) .1s both; }
+  .glass .liquid { transform: translateY(54px); animation: fill 1.35s cubic-bezier(.3,.6,.2,1) .45s forwards; }
+  .glass .wave { animation: wave 1.1s linear infinite; }
+  .loader .lt { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 28px; color: var(--wine); opacity: 0; animation: lfade .8s ease .5s forwards; }
+  .loader .ls { font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--soft); opacity: 0; animation: lfade .8s ease .8s forwards; margin-top: -8px; }
+  @keyframes drop { 0% { transform: translateY(-26px); opacity: 0; } 25% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(34px); opacity: 0; } }
+  @keyframes fill { to { transform: translateY(27px); } }
+  @keyframes wave { to { transform: translateX(-32px); } }
+  @keyframes lfade { to { opacity: 1; } }
+  .js body.loading { overflow: hidden; }
+  .flourish { display: block; width: 170px; max-width: 60%; height: 20px; margin: 2px 0 6px; overflow: visible; }
+  .flourish path { stroke-dasharray: 260; stroke-dashoffset: 0; }
+  .js .rv { opacity: 0; transform: translateY(16px); }
+  .js .rv.in { animation: rise .85s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0ms); }
+  .js figure.rv { opacity: 1; transform: none; }
+  .js figure.rv img { opacity: 0; }
+  .js figure.rv.in { animation: none; }
+  .js figure.rv.in img {
+    -webkit-mask-image: radial-gradient(circle at 50% 58%, #000 40%, transparent 70%); mask-image: radial-gradient(circle at 50% 58%, #000 40%, transparent 70%);
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;
+    animation: bloom 1.7s cubic-bezier(.25,.6,.2,1) both; animation-delay: var(--d, 0ms);
+  }
+  .js .flourish.rv { opacity: 1; transform: none; }
+  .js .flourish.rv path { stroke-dashoffset: 260; }
+  .js .flourish.rv.in { animation: none; }
+  .js .flourish.rv.in path { animation: draw 1.6s cubic-bezier(.4,.1,.2,1) both; animation-delay: var(--d, 0ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes bloom {
+    0% { opacity: 0; filter: blur(14px) saturate(.5); transform: scale(1.05); -webkit-mask-size: 25% 25%; mask-size: 25% 25%; }
+    35% { opacity: 1; }
+    100% { opacity: 1; filter: blur(0) saturate(1); transform: scale(1); -webkit-mask-size: 320% 320%; mask-size: 320% 320%; }
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .js .loader { display: none; }
+    .js body.loading { overflow: auto; }
+    .js .rv, .js .rv.in, .js figure.rv img, .js figure.rv.in img { opacity: 1; transform: none; animation: none; filter: none; -webkit-mask-image: none; mask-image: none; }
+    .js .flourish.rv path, .js .flourish.rv.in path { stroke-dashoffset: 0; animation: none; }
+  }
 </style>
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+<div class="loader" id="loader" role="status" aria-label="Caricamento">
+  <svg class="glass" viewBox="0 0 64 100" aria-hidden="true">
+    <defs><clipPath id="bowl"><path d="M12 12 H52 C52 36 46 52 32 54 C18 52 12 36 12 12 Z"/></clipPath></defs>
+    <circle class="drop" cx="32" cy="8" r="2.6" fill="#5A1F2B"/>
+    <g clip-path="url(#bowl)"><g class="liquid"><path class="wave" d="M0 0 Q8 -3 16 0 T32 0 T48 0 T64 0 T80 0 T96 0 T112 0 T128 0 V60 H0 Z" fill="#5A1F2B"/></g></g>
+    <path d="M12 12 H52 C52 36 46 52 32 54 C18 52 12 36 12 12 Z" fill="none" stroke="#5A1F2B" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M18 18 C18 32 21 42 27 47" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>
+    <path d="M32 54 V86 M19 88 H45" fill="none" stroke="#5A1F2B" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+  <span class="lt">Inverno in cantina</span>
+  <span class="ls">Cantina Valle dei Laghi</span>
+</div>
 
 
 <div class="wrap">
@@ -296,5 +358,46 @@
   })();
 </script>
 
+<script>
+  (function () {
+    var root = document.documentElement, body = document.body, loader = document.getElementById("loader");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var vine = '<svg class="flourish" viewBox="0 0 170 20" aria-hidden="true"><path d="M2 12 C 26 3, 44 19, 70 11 S 118 3, 146 11 c 8 2 14 -1 13 -6 c -1 -5 -8 -5 -9 -1 c -1 3 2 5 4 4" fill="none" stroke="#A8701E" stroke-width="1.6" stroke-linecap="round"/></svg>';
+    document.querySelectorAll("section h1").forEach(function (h) { h.insertAdjacentHTML("afterend", vine); });
+    if (reduce || !loader) { if (loader) loader.remove(); return; }
+    body.classList.add("loading");
+    var sel = [".top", ".wrap > figure", "section figure", ".back", "section h1", ".flourish", ".sub", ".lead", ".facts", ".exp", ".phases", ".note", ".steps li", ".dates", ".book", "section > h2", "section > p", "section > ul", "footer"];
+    var items = Array.prototype.slice.call(document.querySelectorAll(sel.join(",")));
+    items.forEach(function (el) { el.classList.add("rv"); });
+    var seen = false;
+    try { seen = sessionStorage.getItem("iic-seen") === "1"; sessionStorage.setItem("iic-seen", "1"); } catch (e) {}
+    var minMs = seen ? 650 : 1850, done = false;
+    function show(el, delay) { el.style.setProperty("--d", delay + "ms"); el.classList.add("in"); }
+    function reveal() {
+      var k = 0, h = window.innerHeight || 800;
+      var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { show(e.target, 0); io.unobserve(e.target); } });
+      }, { rootMargin: "0px 0px -8% 0px" }) : null;
+      items.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.height > 0 && r.top < h) { show(el, Math.min(k++ * 110, 900)); }
+        else if (io) { io.observe(el); }
+        else { show(el, 0); }
+      });
+    }
+    function finish() {
+      if (done) return; done = true;
+      var wait = Math.max(0, minMs - (window.performance ? performance.now() : 0));
+      setTimeout(function () {
+        loader.classList.add("done");
+        body.classList.remove("loading");
+        reveal();
+        setTimeout(function () { if (loader.parentNode) loader.remove(); }, 900);
+      }, wait);
+    }
+    if (document.readyState === "complete") finish(); else window.addEventListener("load", finish);
+    setTimeout(finish, 3500);
+  })();
+</script>
 </body>
 </html>
