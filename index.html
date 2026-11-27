@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Inverno in cantina</title>
-<meta name="description" content="Inverno in cantina ad Arco, Trentino: visita con il Vino Santo a novembre e dicembre, laboratori sulla botte e sul Trentodoc da gennaio a marzo.">
+<title>Cantina Valle dei Laghi</title>
+<meta name="description" content="Cantina Valle dei Laghi, Arco, dal 1920: la storia della cantina e del Vino Santo trentino, le visite e i laboratori da novembre a marzo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
@@ -19,7 +19,7 @@
   body {
     background: var(--paper); color: var(--ink);
     font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px; line-height: 1.55;
+    font-size: 17px; line-height: 1.6;
   }
   .wrap {
     max-width: 640px; margin: 0 auto;
@@ -39,32 +39,38 @@
   figure img { display: block; width: 100%; height: auto; }
   h1 {
     font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600;
-    font-size: clamp(40px, 11vw, 58px); line-height: 1; color: var(--wine); margin: 18px 0 4px; text-wrap: balance;
+    font-size: clamp(40px, 11vw, 60px); line-height: 1; color: var(--wine); margin: 18px 0 6px; text-wrap: balance;
   }
   .sub { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
-  .lead { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 23px; line-height: 1.3; color: var(--ink); margin: 14px 0 0; }
-  h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.15; color: var(--wine); margin: 30px 0 8px; text-wrap: balance; }
-  h2 .when { display: block; margin-bottom: 4px; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
-  .exp { margin-top: 34px; padding-top: 4px; border-top: 1px solid var(--line); }
-  .exp h2 { margin-top: 22px; }
-  p { margin: 0 0 10px; }
-  .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 12px 0 14px; }
-  .fact { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; min-width: 0; }
-  .fact b { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
-  .fact span { font-size: 17px; font-weight: 600; }
+  .lead { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 24px; line-height: 1.3; color: var(--ink); margin: 14px 0 0; }
+  h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: var(--wine); margin: 34px 0 10px; text-wrap: balance; }
+  p { margin: 0 0 12px; }
+  .year { float: left; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 54px; line-height: .9; color: var(--amber); margin: 4px 12px 0 0; }
+  .warn {
+    position: relative; margin: 34px 4px 8px; padding: 18px 18px 14px; border: 2px dashed var(--wine); border-radius: 6px;
+    background: #FFF9EE; transform: rotate(-1.2deg); box-shadow: 0 2px 0 rgba(90, 31, 43, .08);
+  }
+  .warn b { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: 25px; line-height: 1.15; color: var(--wine); margin-bottom: 8px; }
+  .warn b::before { content: "!"; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; margin-right: 8px; border-radius: 13px; background: var(--wine); color: #FFFFFF; font-family: "Source Sans 3", Arial, sans-serif; font-size: 16px; font-weight: 700; vertical-align: 3px; }
+  .warn p { margin: 0; font-size: 16px; }
+  .js .warn.rv.in { animation: stamp .75s cubic-bezier(.2,1.3,.4,1) both; animation-delay: var(--d, 0ms); }
+  @keyframes stamp { from { opacity: 0; transform: scale(1.18) rotate(-7deg); } to { opacity: 1; transform: rotate(-1.2deg); } }
+  .cards { display: grid; gap: 10px; }
+  .card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--ink); font-weight: 400; transition: border-color .2s ease, transform .2s ease; }
+  .card:hover { border-color: var(--amber); transform: translateY(-2px); }
+  .card .when { display: block; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+  .card .t { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px; font-weight: 600; line-height: 1.15; color: var(--wine); margin: 2px 0 4px; }
+  .card .d { display: block; font-size: 16px; }
+  .card .go { display: block; margin-top: 6px; font-weight: 700; color: var(--wine); }
   .book { background: var(--wine); color: #FFFFFF; border-radius: 12px; padding: 18px 18px 14px; margin-top: 34px; }
   .book h2 { color: #FFFFFF; margin-top: 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 12px; }
+  .book a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 24px; background: #F2D39B; color: var(--wine); font-size: 18px; font-weight: 700; text-decoration: none; }
   .gift { font-size: 15px; color: #F7E7CF; margin: 4px 0 0; }
   a { color: var(--wine); font-weight: 600; }
   .book a.mail { color: #FFFFFF; font-weight: 700; word-break: break-all; }
-  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 10px; }
-  .btns a.btn { margin: 0 !important; }
-  .hint { font-size: 14px; color: #F7E7CF; margin: 0 0 12px; }
-  .book a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin: 4px 0 14px; border-radius: 24px; background: #F2D39B; color: var(--wine); font-size: 18px; font-weight: 700; text-decoration: none; }
-  ul { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 6px; }
   footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--soft); }
-  @media (max-width: 380px) { .facts { grid-template-columns: minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } }
 
   /* --- caricamento e apertura --- */
   .loader { display: none; }
@@ -141,45 +147,31 @@
       <button type="button" data-l="en" aria-pressed="false">EN</button>
     </div>
   </div>
-  <figure><img src="cantina.jpg" width="1096" height="800" alt="Acquerello della cantina, un fienile rurale tra i vigneti d'autunno della Valle dei Laghi, con il lago e le montagne"></figure>
+  <figure><img src="cantina.jpg" width="1096" height="800" alt="Acquerello della cantina, un fienile rurale tra i vigneti d'autunno, con il lago e le montagne"></figure>
 
   <section data-lang="it" lang="it">
-    <h1>Inverno in cantina</h1>
-    <p class="sub">Arco · Trentino</p>
-    <p class="lead">Da novembre a marzo la cantina apre nei mesi in cui il vino si fa in silenzio: una visita fino a Natale, due laboratori fino a marzo.</p>
+    <h1>Un secolo di pazienza</h1>
+    <p class="sub">Cantina Valle dei Laghi · Arco, dal 1920</p>
+    <p class="lead">Facciamo vino ad Arco dal 1920. Oggi vogliamo riportare in cantina il più paziente di tutti: il Vino Santo.</p>
 
-    <div class="exp">
-      <h2><span class="when">Novembre e dicembre</span>La visita</h2>
-      <div class="facts">
-        <div class="fact"><b>Quando</b><span>Ven, sab, dom ore 15</span></div>
-        <div class="fact"><b>Durata</b><span>90 minuti</span></div>
-        <div class="fact"><b>Prezzo</b><span>25 € a persona</span></div>
-        <div class="fact"><b>Gruppo</b><span>Massimo 14 persone</span></div>
-      </div>
-      <p>La Nosiola che appassisce sulle arèle, i graticci di legno dove resta tutto l'inverno prima di diventare Vino Santo, e i vini nuovi in botte. Poi tre vini fermi della cantina, un assaggio di Vino Santo e un tagliere di prodotti trentini: Trentingrana, formaggio di malga, speck, pane e mele.</p>
+    <h2>La nostra storia</h2>
+    <p><span class="year">1920</span>La cantina nasce all'indomani della Grande Guerra. Il Trentino è appena diventato italiano, e il Vino Santo, che per decenni aveva viaggiato verso Vienna e la Germania, perde da un giorno all'altro i suoi mercati.</p>
+    <p>Farlo chiede anni: l'uva appassisce per mesi, il vino affina almeno quattro anni e da un quintale d'uva escono al massimo 30 litri. Così, per decenni, sopravvive quasi solo nelle cantine di poche famiglie. Anche da noi la tradizione si interrompe.</p>
+
+    <h2>Perché lo rifacciamo</h2>
+    <p>Vogliamo farlo riscoprire. Ogni ottobre scegliamo i grappoli più sani di Nosiola e li stendiamo sulle arèle, i graticci di legno dove l'«ora del Garda», il vento che sale dal lago, li asciuga piano per tutto l'inverno. Li spremiamo nella Settimana Santa, da cui il nome, e aspettiamo almeno quattro anni prima di aprire una bottiglia.</p>
+    <p>Oggi lo fanno poche cantine. Proprio per questo vale la pena assaggiarlo.</p>
+
+    <div class="warn" role="note">
+      <b>Avvertenza: questo non è Vin Santo!</b>
+      <p>Il Vin Santo è toscano: Trebbiano e Malvasia, piccole botti chiamate caratelli e un piattino di cantucci accanto. Il nostro è Vino Santo, con la «o»: trentino, di Nosiola, appassito fino a Pasqua. Lontani parenti, caratteri diversissimi. Se però portate i cantucci, non ci offendiamo.</p>
     </div>
 
-    <div class="exp">
-      <h2><span class="when">Da gennaio a marzo</span>Laboratorio «Dalla botte»</h2>
-      <div class="facts">
-        <div class="fact"><b>Quando</b><span>Sabato ore 10:30</span></div>
-        <div class="fact"><b>Durata</b><span>2 ore</span></div>
-        <div class="fact"><b>Prezzo</b><span>40 € a persona</span></div>
-        <div class="fact"><b>Gruppo</b><span>Massimo 10 persone</span></div>
-      </div>
-      <p>Con il cantiniere, le mani nel vino. A gennaio il bâtonnage su una botte dedicata: si rimettono in sospensione le fecce che danno corpo al vino. Da febbraio si assaggia dalla botte lo stesso vino in tre momenti dell'affinamento. Tappa alle arèle del Vino Santo e tagliere di prodotti trentini.</p>
-      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Programma, fasi e date del laboratorio →</a></p>
-    </div>
-
-    <div class="exp">
-      <h2><span class="when">Da gennaio a marzo</span>Laboratorio «Trentodoc»</h2>
-      <div class="facts">
-        <div class="fact"><b>Quando</b><span>Domenica ore 10:30</span></div>
-        <div class="fact"><b>Durata</b><span>2 ore</span></div>
-        <div class="fact"><b>Prezzo</b><span>65 € con la bottiglia</span></div>
-        <div class="fact"><b>Gruppo</b><span>Massimo 10 persone</span></div>
-      </div>
-      <p>Il metodo classico dall'inizio alla fine. Girate le bottiglie sul pupitre, guardate il deposito scendere verso il tappo, poi sboccate la vostra bottiglia insieme al cantiniere. Assaggiate lo stesso vino senza e con il dosaggio e portate a casa la bottiglia che avete sboccato. Occhiali e guanti li forniamo noi.</p>
+    <h2>Venite a trovarci</h2>
+    <div class="cards">
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">Novembre e dicembre</span><span class="t">Inverno in cantina</span><span class="d">La visita all'uva che appassisce sulle arèle, con tre vini e un assaggio di Vino Santo. 25&nbsp;€.</span><span class="go">Scopri →</span></a>
+      <a class="card" data-more="dalla-botte.html" href="dalla-botte.html"><span class="when">Da gennaio a marzo, il sabato</span><span class="t">Laboratorio «Dalla botte»</span><span class="d">Bâtonnage e assaggi dalla botte con il cantiniere. 40&nbsp;€.</span><span class="go">Scopri →</span></a>
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">Da gennaio a marzo, la domenica</span><span class="t">Laboratorio «Trentodoc»</span><span class="d">Remuage e sboccatura: la bottiglia la portate a casa. 65&nbsp;€.</span><span class="go">Scopri →</span></a>
     </div>
 
     <div class="book">
@@ -189,63 +181,40 @@
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=it" target="_blank" rel="noopener">Prenota la visita</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=it" target="_blank" rel="noopener">Prenota un laboratorio</a>
       </div>
-      <p class="hint">La visita: novembre e dicembre. I laboratori «Dalla botte» e «Trentodoc»: da gennaio a marzo.</p>
       <p>Oppure scrivete a <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Telefono: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Regala un laboratorio: voucher per due persone per il laboratorio «Dalla botte», 80 €, valido fino al 31 marzo.</p>
     </div>
-    <h2>Come arrivare</h2>
+    <h2>Dove siamo</h2>
     <p>Via Linfano, 81, 38062 Arco (TN). <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Linfano+81+38062+Arco+TN" target="_blank" rel="noopener">Apri la mappa</a></p>
     <p>Il parcheggio si trova dietro la cantina: seguite le indicazioni dalla via principale.</p>
-    <p>Con la Trentino Guest Card i mezzi pubblici sono compresi: potete lasciare l'auto in albergo.</p>
-    <h2>Da sapere</h2>
-    <ul>
-      <li>Gli assaggi e il laboratorio Trentodoc sono riservati ai maggiorenni.</li>
-      <li>Chi guida può chiedere un'alternativa senza alcol.</li>
-      <li>Gli ambienti di produzione si visitano solo con la guida, lungo il percorso indicato.</li>
-      <li>Schede in italiano, tedesco e inglese.</li>
-    </ul>
     <p style="margin-top:10px">Bevi responsabilmente.</p>
     <footer>Prototipo realizzato per la challenge «L'enoturismo in cantina» · Informatica di base, Università di Trento, 2026.</footer>
   </section>
 
   <section data-lang="de" lang="de" hidden>
-    <h1>Inverno in cantina</h1>
-    <p class="sub">Winter im Weinkeller · Arco, Trentino</p>
-    <p class="lead">Von November bis März öffnet das Weingut in den Monaten, in denen der Wein in aller Stille entsteht: eine Führung bis Weihnachten, zwei Workshops bis März.</p>
+    <h1>Ein Jahrhundert Geduld</h1>
+    <p class="sub">Cantina Valle dei Laghi · Arco, seit 1920</p>
+    <p class="lead">Seit 1920 machen wir Wein in Arco. Heute holen wir den geduldigsten von allen zurück in den Keller: den Vino Santo.</p>
 
-    <div class="exp">
-      <h2><span class="when">November und Dezember</span>Die Führung</h2>
-      <div class="facts">
-        <div class="fact"><b>Wann</b><span>Fr, Sa, So um 15 Uhr</span></div>
-        <div class="fact"><b>Dauer</b><span>90 Minuten</span></div>
-        <div class="fact"><b>Preis</b><span>25 € pro Person</span></div>
-        <div class="fact"><b>Gruppe</b><span>Höchstens 14 Personen</span></div>
-      </div>
-      <p>Die Nosiola-Trauben trocknen den ganzen Winter auf den arèle, hölzernen Gestellen, bevor daraus Vino Santo wird; dazu die jungen Weine im Fass. Danach drei Stillweine des Hauses, eine Kostprobe Vino Santo und eine Platte mit Trentiner Spezialitäten: Trentingrana, Almkäse, Speck, Brot und Äpfel.</p>
+    <h2>Unsere Geschichte</h2>
+    <p><span class="year">1920</span>Das Weingut entsteht kurz nach dem Ersten Weltkrieg. Das Trentino ist gerade italienisch geworden, und der Vino Santo, der jahrzehntelang nach Wien und Deutschland ging, verliert von einem Tag auf den anderen seine Märkte.</p>
+    <p>Er braucht Jahre: Die Trauben trocknen monatelang, der Wein reift mindestens vier Jahre, und aus 100 Kilo Trauben werden höchstens 30 Liter. So überlebt er jahrzehntelang fast nur in den Kellern weniger Familien. Auch bei uns reißt die Tradition ab.</p>
+
+    <h2>Warum wir ihn wieder machen</h2>
+    <p>Wir wollen, dass man ihn wiederentdeckt. Jeden Oktober wählen wir die gesündesten Nosiola-Trauben aus und legen sie auf die arèle, Holzgestelle, auf denen die „Ora del Garda“, der Wind vom See, sie den ganzen Winter langsam trocknet. Gepresst wird in der Karwoche, daher der Name. Dann warten wir mindestens vier Jahre, bevor wir eine Flasche öffnen.</p>
+    <p>Heute machen ihn nur noch wenige Weingüter. Genau deshalb lohnt es sich, ihn zu probieren.</p>
+
+    <div class="warn" role="note">
+      <b>Achtung: Das ist kein Vin Santo!</b>
+      <p>Vin Santo kommt aus der Toskana: Trebbiano und Malvasia, kleine Fässer namens caratelli und ein Teller Cantucci dazu. Unserer ist Vino Santo, mit „o“: aus dem Trentino, aus Nosiola, getrocknet bis Ostern. Entfernte Verwandte, ganz verschiedene Charaktere. Wer trotzdem Cantucci mitbringt: Wir sind nicht beleidigt.</p>
     </div>
 
-    <div class="exp">
-      <h2><span class="when">Januar bis März</span>Workshop „Aus dem Fass“</h2>
-      <div class="facts">
-        <div class="fact"><b>Wann</b><span>Samstag um 10:30 Uhr</span></div>
-        <div class="fact"><b>Dauer</b><span>2 Stunden</span></div>
-        <div class="fact"><b>Preis</b><span>40 € pro Person</span></div>
-        <div class="fact"><b>Gruppe</b><span>Höchstens 10 Personen</span></div>
-      </div>
-      <p>Mit dem Kellermeister, die Hände im Wein. Im Januar die Bâtonnage an einem eigenen Fass: Der Hefesatz, der dem Wein Körper gibt, wird aufgerührt. Ab Februar verkosten Sie denselben Wein direkt aus dem Fass, zu drei Zeitpunkten seiner Reifung. Dazu ein Halt bei den arèle des Vino Santo und eine Platte mit Trentiner Spezialitäten.</p>
-      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Ablauf, Phasen und Termine des Workshops →</a></p>
-    </div>
-
-    <div class="exp">
-      <h2><span class="when">Januar bis März</span>Workshop „Trentodoc“</h2>
-      <div class="facts">
-        <div class="fact"><b>Wann</b><span>Sonntag um 10:30 Uhr</span></div>
-        <div class="fact"><b>Dauer</b><span>2 Stunden</span></div>
-        <div class="fact"><b>Preis</b><span>65 € mit Flasche</span></div>
-        <div class="fact"><b>Gruppe</b><span>Höchstens 10 Personen</span></div>
-      </div>
-      <p>Die klassische Flaschengärung von Anfang bis Ende. Sie drehen die Flaschen im Rüttelpult, sehen den Hefesatz zum Verschluss wandern und degorgieren dann mit dem Kellermeister Ihre eigene Flasche. Sie verkosten denselben Wein ohne und mit Dosage und nehmen die Flasche, die Sie degorgiert haben, mit nach Hause. Schutzbrille und Handschuhe stellen wir.</p>
+    <h2>Besuchen Sie uns</h2>
+    <div class="cards">
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">November und Dezember</span><span class="t">Inverno in cantina</span><span class="d">Führung zu den trocknenden Trauben, mit drei Weinen und einer Kostprobe Vino Santo. 25&nbsp;€.</span><span class="go">Mehr erfahren →</span></a>
+      <a class="card" data-more="dalla-botte.html" href="dalla-botte.html"><span class="when">Januar bis März, samstags</span><span class="t">Workshop „Aus dem Fass“</span><span class="d">Bâtonnage und Verkostung aus dem Fass mit dem Kellermeister. 40&nbsp;€.</span><span class="go">Mehr erfahren →</span></a>
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">Januar bis März, sonntags</span><span class="t">Workshop „Trentodoc“</span><span class="d">Rütteln und Degorgieren: Die Flasche nehmen Sie mit. 65&nbsp;€.</span><span class="go">Mehr erfahren →</span></a>
     </div>
 
     <div class="book">
@@ -255,7 +224,6 @@
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=de" target="_blank" rel="noopener">Führung buchen</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=de" target="_blank" rel="noopener">Workshop buchen</a>
       </div>
-      <p class="hint">Die Führung: November und Dezember. Die Workshops „Aus dem Fass“ und „Trentodoc“: Januar bis März.</p>
       <p>Oder schreiben Sie an <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Telefon: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Einen Workshop verschenken: Gutschein für zwei Personen für den Workshop „Aus dem Fass“, 80 €, gültig bis 31. März.</p>
@@ -263,55 +231,33 @@
     <h2>Anfahrt</h2>
     <p>Via Linfano, 81, 38062 Arco (TN). <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Linfano+81+38062+Arco+TN" target="_blank" rel="noopener">Karte öffnen</a></p>
     <p>Der Parkplatz befindet sich hinter dem Weingut: Folgen Sie der Beschilderung von der Hauptstraße.</p>
-    <p>Mit der Trentino Guest Card sind die öffentlichen Verkehrsmittel inbegriffen: Das Auto kann im Hotel bleiben.</p>
-    <h2>Gut zu wissen</h2>
-    <ul>
-      <li>Verkostungen und der Trentodoc-Workshop sind nur für Erwachsene ab 18 Jahren.</li>
-      <li>Wer fährt, erhält auf Wunsch eine alkoholfreie Alternative.</li>
-      <li>Die Produktionsräume werden nur mit Führung und auf dem vorgesehenen Weg besichtigt.</li>
-      <li>Infoblätter auf Italienisch, Deutsch und Englisch.</li>
-    </ul>
     <p style="margin-top:10px">Bitte genießen Sie verantwortungsvoll.</p>
     <footer>Prototyp für die Challenge „L'enoturismo in cantina“ · Informatica di base, Universität Trient, 2026.</footer>
   </section>
 
   <section data-lang="en" lang="en" hidden>
-    <h1>Inverno in cantina</h1>
-    <p class="sub">Winter in the cellar · Arco, Trentino</p>
-    <p class="lead">From November to March the winery opens in the months when wine is made in silence: a tour until Christmas, two hands-on workshops until March.</p>
+    <h1>A century of patience</h1>
+    <p class="sub">Cantina Valle dei Laghi · Arco, since 1920</p>
+    <p class="lead">We have been making wine in Arco since 1920. Now we are bringing back the most patient wine of all: Vino Santo.</p>
 
-    <div class="exp">
-      <h2><span class="when">November and December</span>The tour</h2>
-      <div class="facts">
-        <div class="fact"><b>When</b><span>Fri, Sat, Sun at 3 pm</span></div>
-        <div class="fact"><b>Duration</b><span>90 minutes</span></div>
-        <div class="fact"><b>Price</b><span>€25 per person</span></div>
-        <div class="fact"><b>Group</b><span>Up to 14 people</span></div>
-      </div>
-      <p>Nosiola grapes drying on the arèle, the wooden racks where they rest all winter before becoming Vino Santo, and the new wines in barrel. Then three still wines from the estate, a taste of Vino Santo and a board of Trentino specialities: Trentingrana, mountain cheese, speck, bread and apples.</p>
+    <h2>Our story</h2>
+    <p><span class="year">1920</span>The winery was founded just after the First World War. Trentino had just become Italian, and Vino Santo, which for decades had travelled to Vienna and Germany, lost its markets almost overnight.</p>
+    <p>It takes years to make: the grapes dry for months, the wine ages for at least four years, and 100 kilos of grapes give at most 30 litres. For decades it survived almost only in a few family cellars. Here, too, the tradition was lost.</p>
+
+    <h2>Why we are making it again</h2>
+    <p>We want people to rediscover it. Every October we pick the healthiest Nosiola bunches and lay them on the arèle, wooden racks where the “Ora del Garda”, the breeze from the lake, dries them slowly all winter. We press them in Holy Week, hence the name, and wait at least four years before opening a bottle.</p>
+    <p>Today only a handful of wineries still make it. That is exactly why it is worth tasting.</p>
+
+    <div class="warn" role="note">
+      <b>Warning: this is not Vin Santo!</b>
+      <p>Vin Santo is Tuscan: Trebbiano and Malvasia, small barrels called caratelli, and a plate of cantucci on the side. Ours is Vino Santo, with an “o”: from Trentino, made from Nosiola, dried until Easter. Distant cousins, very different characters. If you bring cantucci anyway, we won't be offended.</p>
     </div>
 
-    <div class="exp">
-      <h2><span class="when">January to March</span>“From the barrel” workshop</h2>
-      <div class="facts">
-        <div class="fact"><b>When</b><span>Saturday at 10:30 am</span></div>
-        <div class="fact"><b>Duration</b><span>2 hours</span></div>
-        <div class="fact"><b>Price</b><span>€40 per person</span></div>
-        <div class="fact"><b>Group</b><span>Up to 10 people</span></div>
-      </div>
-      <p>Hands in the wine, with the cellar master. In January, bâtonnage on a dedicated barrel: stirring back up the lees that give the wine its body. From February, you taste the same wine straight from the barrel at three stages of its ageing. A stop at the Vino Santo racks and a board of Trentino specialities.</p>
-      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Programme, phases and dates of the workshop →</a></p>
-    </div>
-
-    <div class="exp">
-      <h2><span class="when">January to March</span>Trentodoc workshop</h2>
-      <div class="facts">
-        <div class="fact"><b>When</b><span>Sunday at 10:30 am</span></div>
-        <div class="fact"><b>Duration</b><span>2 hours</span></div>
-        <div class="fact"><b>Price</b><span>€65 with the bottle</span></div>
-        <div class="fact"><b>Group</b><span>Up to 10 people</span></div>
-      </div>
-      <p>The traditional method from start to finish. Turn the bottles on the riddling rack, watch the sediment move down to the cap, then disgorge your own bottle with the cellar master. Taste the same wine without and with dosage, and take home the bottle you disgorged. We provide safety glasses and gloves.</p>
+    <h2>Come and visit</h2>
+    <div class="cards">
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">November and December</span><span class="t">Inverno in cantina</span><span class="d">A tour of the grapes drying on the racks, with three wines and a taste of Vino Santo. €25.</span><span class="go">Find out more →</span></a>
+      <a class="card" data-more="dalla-botte.html" href="dalla-botte.html"><span class="when">January to March, Saturdays</span><span class="t">“From the barrel” workshop</span><span class="d">Bâtonnage and tasting from the barrel with the cellar master. €40.</span><span class="go">Find out more →</span></a>
+      <a class="card" data-more="esperienze.html" href="esperienze.html"><span class="when">January to March, Sundays</span><span class="t">Trentodoc workshop</span><span class="d">Riddling and disgorging: you take the bottle home. €65.</span><span class="go">Find out more →</span></a>
     </div>
 
     <div class="book">
@@ -321,22 +267,13 @@
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=en" target="_blank" rel="noopener">Book the tour</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=en" target="_blank" rel="noopener">Book a workshop</a>
       </div>
-      <p class="hint">The tour: November and December. The “From the barrel” and Trentodoc workshops: January to March.</p>
       <p>Or write to <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Phone: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Give a workshop: a voucher for two people for the “From the barrel” workshop, €80, valid until 31 March.</p>
     </div>
-    <h2>Getting here</h2>
+    <h2>Find us</h2>
     <p>Via Linfano, 81, 38062 Arco (TN). <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Linfano+81+38062+Arco+TN" target="_blank" rel="noopener">Open the map</a></p>
     <p>The car park is behind the winery: follow the signs from the main road.</p>
-    <p>With the Trentino Guest Card public transport is included, so you can leave the car at the hotel.</p>
-    <h2>Good to know</h2>
-    <ul>
-      <li>Tastings and the Trentodoc workshop are for adults only (18+).</li>
-      <li>Drivers can ask for an alcohol-free alternative.</li>
-      <li>Production areas are visited only with the guide, along the marked route.</li>
-      <li>Info sheets in Italian, German and English.</li>
-    </ul>
     <p style="margin-top:10px">Please drink responsibly.</p>
     <footer>Prototype made for the challenge "L'enoturismo in cantina" · Informatica di base, University of Trento, 2026.</footer>
   </section>
@@ -381,7 +318,7 @@
     document.querySelectorAll("section h1").forEach(function (h) { h.insertAdjacentHTML("afterend", vine); });
     if (reduce || !loader) { if (loader) loader.remove(); return; }
     body.classList.add("loading");
-    var sel = [".top", ".wrap > figure", "section figure", ".back", "section h1", ".flourish", ".sub", ".lead", ".facts", ".exp", ".phases", ".note", ".steps li", ".dates", ".book", "section > h2", "section > p", "section > ul", "footer"];
+    var sel = [".top", ".wrap > figure", "section figure", ".back", "section h1", ".flourish", ".sub", ".lead", ".facts", ".exp", ".phases", ".note", ".steps li", ".dates", ".warn", ".card", ".book", "section > h2", "section > p", "section > ul", "footer"];
     var items = Array.prototype.slice.call(document.querySelectorAll(sel.join(",")));
     items.forEach(function (el) { el.classList.add("rv"); });
     var seen = false;

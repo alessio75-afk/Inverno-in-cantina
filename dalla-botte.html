@@ -142,7 +142,7 @@
 
 <div class="wrap">
   <div class="top">
-    <a class="house" data-back href="./">Cantina Valle dei Laghi</a>
+    <a class="house" data-back="./" href="./">Cantina Valle dei Laghi</a>
     <div class="langs" role="group" aria-label="Lingua / Sprache / Language">
       <button type="button" data-l="it" aria-pressed="true">IT</button>
       <button type="button" data-l="de" aria-pressed="false">DE</button>
@@ -151,7 +151,7 @@
   </div>
 
   <section data-lang="it" lang="it">
-    <a class="back" data-back href="./">← Tutte le esperienze</a>
+    <a class="back" data-back="esperienze.html" href="esperienze.html">← Tutte le esperienze</a>
     <figure><img src="cantina.jpg" width="1096" height="800" alt="Acquerello della cantina, un fienile rurale tra i vigneti d'autunno della Valle dei Laghi, con il lago e le montagne"></figure>
     <h1>Laboratorio «Dalla botte»</h1>
     <p class="sub">Inverno in cantina · Arco, Trentino</p>
@@ -206,7 +206,7 @@
   </section>
 
   <section data-lang="de" lang="de" hidden>
-    <a class="back" data-back href="./">← Alle Erlebnisse</a>
+    <a class="back" data-back="esperienze.html" href="esperienze.html">← Alle Erlebnisse</a>
     <figure><img src="cantina.jpg" width="1096" height="800" alt="Aquarell des Weinguts, eine ländliche Scheune zwischen herbstlichen Weinbergen der Valle dei Laghi, mit See und Bergen"></figure>
     <h1>Workshop „Aus dem Fass“</h1>
     <p class="sub">Inverno in cantina · Arco, Trentino</p>
@@ -261,7 +261,7 @@
   </section>
 
   <section data-lang="en" lang="en" hidden>
-    <a class="back" data-back href="./">← All experiences</a>
+    <a class="back" data-back="esperienze.html" href="esperienze.html">← All experiences</a>
     <figure><img src="cantina.jpg" width="1096" height="800" alt="Watercolour of the winery, a rural barn among autumn vineyards in the Valle dei Laghi, with the lake and mountains"></figure>
     <h1>“From the barrel” workshop</h1>
     <p class="sub">Inverno in cantina · Arco, Trentino</p>
@@ -326,7 +326,7 @@
       if (langs.indexOf(l) < 0) l = "it";
       sections.forEach(function (s) { s.hidden = s.getAttribute("data-lang") !== l; });
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-l") === l)); });
-      backs.forEach(function (a) { a.href = "./#" + l; });
+      backs.forEach(function (a) { a.href = (a.getAttribute("data-back") || "./") + "#" + l; });
       document.documentElement.lang = l;
     }
     function fromHash() {
