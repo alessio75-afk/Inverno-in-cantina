@@ -57,6 +57,9 @@
   .gift { font-size: 15px; color: #F7E7CF; margin: 4px 0 0; }
   a { color: var(--wine); font-weight: 600; }
   .book a.mail { color: #FFFFFF; font-weight: 700; word-break: break-all; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 10px; }
+  .btns a.btn { margin: 0 !important; }
+  .hint { font-size: 14px; color: #F7E7CF; margin: 0 0 12px; }
   .book a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin: 4px 0 14px; border-radius: 24px; background: #F2D39B; color: var(--wine); font-size: 18px; font-weight: 700; text-decoration: none; }
   ul { margin: 0; padding-left: 20px; }
   li { margin-bottom: 6px; }
@@ -181,8 +184,12 @@
 
     <div class="book">
       <h2>Prenota</h2>
-      <p>Prenotazione obbligatoria, entro il giorno prima. Nel modulo scegliete l'esperienza e la data.</p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=it" target="_blank" rel="noopener">Prenota online</a>
+      <p>Prenotazione obbligatoria, entro il giorno prima.</p>
+      <div class="btns">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=it" target="_blank" rel="noopener">Prenota la visita</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=it" target="_blank" rel="noopener">Prenota un laboratorio</a>
+      </div>
+      <p class="hint">La visita: novembre e dicembre. I laboratori «Dalla botte» e «Trentodoc»: da gennaio a marzo.</p>
       <p>Oppure scrivete a <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Telefono: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Regala un laboratorio: voucher per due persone per il laboratorio «Dalla botte», 80 €, valido fino al 31 marzo.</p>
@@ -243,8 +250,12 @@
 
     <div class="book">
       <h2>Buchen</h2>
-      <p>Anmeldung erforderlich, spätestens am Vortag. Im Formular wählen Sie Erlebnis und Datum.</p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=de" target="_blank" rel="noopener">Online buchen</a>
+      <p>Anmeldung erforderlich, spätestens am Vortag.</p>
+      <div class="btns">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=de" target="_blank" rel="noopener">Führung buchen</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=de" target="_blank" rel="noopener">Workshop buchen</a>
+      </div>
+      <p class="hint">Die Führung: November und Dezember. Die Workshops „Aus dem Fass“ und „Trentodoc“: Januar bis März.</p>
       <p>Oder schreiben Sie an <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Telefon: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Einen Workshop verschenken: Gutschein für zwei Personen für den Workshop „Aus dem Fass“, 80 €, gültig bis 31. März.</p>
@@ -305,8 +316,12 @@
 
     <div class="book">
       <h2>Book</h2>
-      <p>Booking required, by the day before. Choose the experience and the date in the form.</p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=en" target="_blank" rel="noopener">Book online</a>
+      <p>Booking required, by the day before.</p>
+      <div class="btns">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=en" target="_blank" rel="noopener">Book the tour</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfhcgM9n7q4fl3M7kQM9K02Fv0b4h5NBKFH_QYITyp5Joq49g/viewform?hl=en" target="_blank" rel="noopener">Book a workshop</a>
+      </div>
+      <p class="hint">The tour: November and December. The “From the barrel” and Trentodoc workshops: January to March.</p>
       <p>Or write to <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
       <p>Phone: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
       <p class="gift">Give a workshop: a voucher for two people for the “From the barrel” workshop, €80, valid until 31 March.</p>
