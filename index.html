@@ -103,6 +103,7 @@
         <div class="fact"><b>Gruppo</b><span>Massimo 10 persone</span></div>
       </div>
       <p>Con il cantiniere, le mani nel vino. A gennaio il bâtonnage su una botte dedicata: si rimettono in sospensione le fecce che danno corpo al vino. Da febbraio si assaggia dalla botte lo stesso vino in tre momenti dell'affinamento. Tappa alle arèle del Vino Santo e tagliere di prodotti trentini.</p>
+      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Programma, fasi e date del laboratorio →</a></p>
     </div>
 
     <div class="exp">
@@ -164,6 +165,7 @@
         <div class="fact"><b>Gruppe</b><span>Höchstens 10 Personen</span></div>
       </div>
       <p>Mit dem Kellermeister, die Hände im Wein. Im Januar die Bâtonnage an einem eigenen Fass: Der Hefesatz, der dem Wein Körper gibt, wird aufgerührt. Ab Februar verkosten Sie denselben Wein direkt aus dem Fass, zu drei Zeitpunkten seiner Reifung. Dazu ein Halt bei den arèle des Vino Santo und eine Platte mit Trentiner Spezialitäten.</p>
+      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Ablauf, Phasen und Termine des Workshops →</a></p>
     </div>
 
     <div class="exp">
@@ -225,6 +227,7 @@
         <div class="fact"><b>Group</b><span>Up to 10 people</span></div>
       </div>
       <p>Hands in the wine, with the cellar master. In January, bâtonnage on a dedicated barrel: stirring back up the lees that give the wine its body. From February, you taste the same wine straight from the barrel at three stages of its ageing. A stop at the Vino Santo racks and a board of Trentino specialities.</p>
+      <p><a data-more="dalla-botte.html" href="dalla-botte.html">Programme, phases and dates of the workshop →</a></p>
     </div>
 
     <div class="exp">
@@ -267,10 +270,12 @@
     var langs = ["it", "de", "en"];
     var sections = document.querySelectorAll("section[data-lang]");
     var buttons = document.querySelectorAll(".langs button");
+    var mores = document.querySelectorAll("a[data-more]");
     function show(l) {
       if (langs.indexOf(l) < 0) l = "it";
       sections.forEach(function (s) { s.hidden = s.getAttribute("data-lang") !== l; });
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-l") === l)); });
+      mores.forEach(function (a) { a.href = a.getAttribute("data-more") + "#" + l; });
       document.documentElement.lang = l;
     }
     function fromHash() {

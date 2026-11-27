@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Laboratorio «Dalla botte»</title>
+<meta name="description" content="Laboratorio «Dalla botte» ad Arco, Trentino: bâtonnage e assaggi dalla botte con il cantiniere, il sabato da gennaio a marzo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --paper: #F6EFE2; --card: #FBF7EF; --ink: #2B1A1E; --soft: #5C4A40;
+    --wine: #5A1F2B; --amber: #A8701E; --line: #E3D6C1;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px; line-height: 1.55;
+  }
+  .wrap {
+    max-width: 640px; margin: 0 auto;
+    padding-block: 20px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .house { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--wine); text-decoration: none; }
+  .langs { display: flex; gap: 6px; }
+  .langs button {
+    font: inherit; font-size: 14px; font-weight: 600; min-width: 44px; min-height: 36px;
+    border: 1px solid var(--line); background: var(--card); color: var(--soft); border-radius: 18px; cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] { background: var(--wine); border-color: var(--wine); color: #FFFFFF; }
+  .back { display: inline-block; margin-top: 14px; font-size: 15px; }
+  figure { margin: 14px 0 0; }
+  figure img { display: block; width: 100%; height: auto; }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600;
+    font-size: clamp(36px, 10vw, 52px); line-height: 1.02; color: var(--wine); margin: 18px 0 6px; text-wrap: balance;
+  }
+  .sub { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
+  .lead { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 23px; line-height: 1.3; color: var(--ink); margin: 14px 0 0; }
+  h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 26px; line-height: 1.15; color: var(--wine); margin: 32px 0 10px; text-wrap: balance; }
+  p { margin: 0 0 10px; }
+  .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+  .fact { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+  .fact b { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+  .fact span { font-size: 17px; font-weight: 600; }
+  .steps { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+  .steps li { position: relative; padding: 0 0 16px 18px; margin: 0; }
+  .steps li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 6px; background: var(--wine); }
+  .steps .t { display: block; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--amber); }
+  .steps .h { display: block; font-weight: 700; color: var(--wine); }
+  .phases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .phase { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-width: 0; }
+  .phase b { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+  .phase .h { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; font-weight: 600; color: var(--wine); line-height: 1.15; margin: 2px 0 6px; }
+  .phase p { font-size: 15px; margin: 0; }
+  .note { background: var(--card); border-left: 3px solid var(--amber); padding: 12px 14px; margin-top: 14px; font-size: 16px; }
+  .dates { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; padding: 0; list-style: none; }
+  .dates li { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 6px 14px; font-weight: 600; margin: 0; }
+  .book { background: var(--wine); color: #FFFFFF; border-radius: 12px; padding: 18px 18px 14px; margin-top: 34px; }
+  .book h2 { color: #FFFFFF; margin-top: 0; }
+  .gift { font-size: 15px; color: #F7E7CF; margin: 4px 0 0; }
+  a { color: var(--wine); font-weight: 600; }
+  .book a.mail { color: #FFFFFF; font-weight: 700; word-break: break-all; }
+  .book a.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin: 4px 0 14px; border-radius: 24px; background: #F2D39B; color: var(--wine); font-size: 18px; font-weight: 700; text-decoration: none; }
+  ul.plain { margin: 0; padding-left: 20px; }
+  ul.plain li { margin-bottom: 6px; }
+  footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--soft); }
+  @media (max-width: 380px) { .facts, .phases { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="top">
+    <a class="house" data-back href="./">Cantina Valle dei Laghi</a>
+    <div class="langs" role="group" aria-label="Lingua / Sprache / Language">
+      <button type="button" data-l="it" aria-pressed="true">IT</button>
+      <button type="button" data-l="de" aria-pressed="false">DE</button>
+      <button type="button" data-l="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <section data-lang="it" lang="it">
+    <a class="back" data-back href="./">← Tutte le esperienze</a>
+    <figure><img src="cantina.jpg" width="1096" height="800" alt="Acquerello della cantina, un fienile rurale tra i vigneti d'autunno della Valle dei Laghi, con il lago e le montagne"></figure>
+    <h1>Laboratorio «Dalla botte»</h1>
+    <p class="sub">Inverno in cantina · Arco, Trentino</p>
+    <p class="lead">Due ore con il cantiniere, le mani nel vino mentre cresce.</p>
+    <div class="facts">
+      <div class="fact"><b>Quando</b><span>Sabato ore 10:30</span></div>
+      <div class="fact"><b>Periodo</b><span>Da gennaio a marzo</span></div>
+      <div class="fact"><b>Durata</b><span>2 ore</span></div>
+      <div class="fact"><b>Prezzo</b><span>40 € a persona</span></div>
+      <div class="fact"><b>Gruppo</b><span>Massimo 10 persone</span></div>
+      <div class="fact"><b>Schede</b><span>Italiano, tedesco, inglese</span></div>
+    </div>
+
+    <h2>Due fasi, due laboratori diversi</h2>
+    <div class="phases">
+      <div class="phase"><b>Gennaio</b><span class="h">Bâtonnage</span><p>Con un bastone rimettete in sospensione le fecce fini sul fondo della botte. È il lavoro che dà al vino corpo e morbidezza.</p></div>
+      <div class="phase"><b>Febbraio e marzo</b><span class="h">Assaggi dalla botte</span><p>Assaggiate lo stesso vino in tre momenti dell'affinamento e sentite come cambia nel legno.</p></div>
+    </div>
+    <p class="note">Il bâtonnage si fa soprattutto nei mesi subito dopo la vendemmia: per questo a gennaio lo si fa con le proprie mani, e da febbraio se ne assaggia il risultato.</p>
+
+    <h2>Come si svolge</h2>
+    <ol class="steps">
+      <li><span class="t">10:30</span><span class="h">Benvenuto</span>Come nasce un vino bianco che affina sulle fecce, e perché d'inverno la cantina lavora in silenzio.</li>
+      <li><span class="t">10:45</span><span class="h">In cantina con il cantiniere</span>Bâtonnage sulla botte dedicata ai laboratori, oppure tre assaggi dalla botte con il ladro, lo strumento che preleva il vino dal legno.</li>
+      <li><span class="t">11:40</span><span class="h">Le arèle del Vino Santo</span>La Nosiola stesa sui graticci, che appassisce fino alla Settimana Santa, e un assaggio di Vino Santo.</li>
+      <li><span class="t">12:00</span><span class="h">Tagliere e domande</span>Trentingrana, formaggio di malga, speck, pane e mele. Si finisce alle 12:30.</li>
+    </ol>
+
+    <h2>Prossime date</h2>
+    <p>Prova di febbraio 2027, assaggi dalla botte:</p>
+    <ul class="dates"><li>sab 6 febbraio</li><li>sab 13 febbraio</li><li>sab 20 febbraio</li><li>sab 27 febbraio</li></ul>
+
+    <div class="book">
+      <h2>Prenota</h2>
+      <p>Prenotazione obbligatoria, entro il giorno prima. Nel modulo scegliete una data del laboratorio «Dalla botte».</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=it" target="_blank" rel="noopener">Prenota online</a>
+      <p>Oppure scrivete a <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
+      <p>Telefono: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
+      <p class="gift">Regalatelo: voucher per due persone, 80 €, valido fino al 31 marzo. Chiedetelo in cantina o per e-mail.</p>
+    </div>
+
+    <h2>Da sapere</h2>
+    <ul class="plain">
+      <li>Gli assaggi sono riservati ai maggiorenni.</li>
+      <li>Per l'igiene si lavora solo sulla botte dedicata, con attrezzi sanificati: vi chiediamo di lavarvi le mani prima di iniziare.</li>
+      <li>In cantina fa fresco anche d'inverno: portate una giacca e scarpe comode.</li>
+      <li>Chi guida può chiedere un'alternativa senza alcol.</li>
+      <li>Indirizzo: Via Linfano, 81, 38062 Arco (TN). Il parcheggio è dietro la cantina.</li>
+    </ul>
+    <p style="margin-top:10px">Bevi responsabilmente.</p>
+    <footer>Prototipo realizzato per la challenge «L'enoturismo in cantina» · Informatica di base, Università di Trento, 2026.</footer>
+  </section>
+
+  <section data-lang="de" lang="de" hidden>
+    <a class="back" data-back href="./">← Alle Erlebnisse</a>
+    <figure><img src="cantina.jpg" width="1096" height="800" alt="Aquarell des Weinguts, eine ländliche Scheune zwischen herbstlichen Weinbergen der Valle dei Laghi, mit See und Bergen"></figure>
+    <h1>Workshop „Aus dem Fass“</h1>
+    <p class="sub">Inverno in cantina · Arco, Trentino</p>
+    <p class="lead">Zwei Stunden mit dem Kellermeister, die Hände im Wein, während er reift.</p>
+    <div class="facts">
+      <div class="fact"><b>Wann</b><span>Samstag um 10:30 Uhr</span></div>
+      <div class="fact"><b>Zeitraum</b><span>Januar bis März</span></div>
+      <div class="fact"><b>Dauer</b><span>2 Stunden</span></div>
+      <div class="fact"><b>Preis</b><span>40 € pro Person</span></div>
+      <div class="fact"><b>Gruppe</b><span>Höchstens 10 Personen</span></div>
+      <div class="fact"><b>Infoblätter</b><span>Italienisch, Deutsch, Englisch</span></div>
+    </div>
+
+    <h2>Zwei Phasen, zwei verschiedene Workshops</h2>
+    <div class="phases">
+      <div class="phase"><b>Januar</b><span class="h">Bâtonnage</span><p>Mit einem Stab rühren Sie die feine Hefe am Boden des Fasses auf. Das gibt dem Wein Körper und Weichheit.</p></div>
+      <div class="phase"><b>Februar und März</b><span class="h">Verkostung aus dem Fass</span><p>Sie verkosten denselben Wein zu drei Zeitpunkten seiner Reifung und schmecken, wie er sich im Holz verändert.</p></div>
+    </div>
+    <p class="note">Die Bâtonnage wird vor allem in den Monaten direkt nach der Lese gemacht: Im Januar legen Sie selbst Hand an, ab Februar verkosten Sie das Ergebnis.</p>
+
+    <h2>Ablauf</h2>
+    <ol class="steps">
+      <li><span class="t">10:30</span><span class="h">Begrüßung</span>Wie ein Weißwein auf der Hefe reift und warum der Keller im Winter in aller Stille arbeitet.</li>
+      <li><span class="t">10:45</span><span class="h">Im Keller mit dem Kellermeister</span>Bâtonnage am Fass, das den Workshops vorbehalten ist, oder drei Kostproben aus dem Fass mit dem Weinheber.</li>
+      <li><span class="t">11:40</span><span class="h">Die arèle des Vino Santo</span>Nosiola-Trauben, die bis zur Karwoche auf Holzgestellen trocknen, und eine Kostprobe Vino Santo.</li>
+      <li><span class="t">12:00</span><span class="h">Platte und Fragen</span>Trentingrana, Almkäse, Speck, Brot und Äpfel. Ende um 12:30 Uhr.</li>
+    </ol>
+
+    <h2>Nächste Termine</h2>
+    <p>Testmonat Februar 2027, Verkostung aus dem Fass:</p>
+    <ul class="dates"><li>Sa 6. Februar</li><li>Sa 13. Februar</li><li>Sa 20. Februar</li><li>Sa 27. Februar</li></ul>
+
+    <div class="book">
+      <h2>Buchen</h2>
+      <p>Anmeldung erforderlich, spätestens am Vortag. Wählen Sie im Formular das Datum mit „Laboratorio «Dalla botte»“.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=de" target="_blank" rel="noopener">Online buchen</a>
+      <p>Oder schreiben Sie an <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
+      <p>Telefon: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
+      <p class="gift">Verschenken: Gutschein für zwei Personen, 80 €, gültig bis 31. März. Im Weingut oder per E-Mail erhältlich.</p>
+    </div>
+
+    <h2>Gut zu wissen</h2>
+    <ul class="plain">
+      <li>Verkostungen nur für Erwachsene ab 18 Jahren.</li>
+      <li>Aus Hygienegründen arbeiten wir nur am eigenen Workshop-Fass mit desinfizierten Geräten: Bitte waschen Sie sich vor Beginn die Hände.</li>
+      <li>Im Keller ist es auch im Winter kühl: Bitte Jacke und bequeme Schuhe mitbringen.</li>
+      <li>Wer fährt, erhält auf Wunsch eine alkoholfreie Alternative.</li>
+      <li>Adresse: Via Linfano, 81, 38062 Arco (TN). Der Parkplatz befindet sich hinter dem Weingut.</li>
+    </ul>
+    <p style="margin-top:10px">Bitte genießen Sie verantwortungsvoll.</p>
+    <footer>Prototyp für die Challenge „L'enoturismo in cantina“ · Informatica di base, Universität Trient, 2026.</footer>
+  </section>
+
+  <section data-lang="en" lang="en" hidden>
+    <a class="back" data-back href="./">← All experiences</a>
+    <figure><img src="cantina.jpg" width="1096" height="800" alt="Watercolour of the winery, a rural barn among autumn vineyards in the Valle dei Laghi, with the lake and mountains"></figure>
+    <h1>“From the barrel” workshop</h1>
+    <p class="sub">Inverno in cantina · Arco, Trentino</p>
+    <p class="lead">Two hours with the cellar master, hands in the wine while it grows.</p>
+    <div class="facts">
+      <div class="fact"><b>When</b><span>Saturday at 10:30 am</span></div>
+      <div class="fact"><b>Season</b><span>January to March</span></div>
+      <div class="fact"><b>Duration</b><span>2 hours</span></div>
+      <div class="fact"><b>Price</b><span>€40 per person</span></div>
+      <div class="fact"><b>Group</b><span>Up to 10 people</span></div>
+      <div class="fact"><b>Info sheets</b><span>Italian, German, English</span></div>
+    </div>
+
+    <h2>Two phases, two different workshops</h2>
+    <div class="phases">
+      <div class="phase"><b>January</b><span class="h">Bâtonnage</span><p>With a stick you stir the fine lees back up from the bottom of the barrel. It is the work that gives the wine body and roundness.</p></div>
+      <div class="phase"><b>February and March</b><span class="h">Tasting from the barrel</span><p>You taste the same wine at three stages of its ageing and notice how it changes in the wood.</p></div>
+    </div>
+    <p class="note">Bâtonnage is done mostly in the months right after the harvest: so in January you do it with your own hands, and from February you taste the result.</p>
+
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><span class="t">10:30</span><span class="h">Welcome</span>How a white wine ages on its lees, and why the cellar works in silence in winter.</li>
+      <li><span class="t">10:45</span><span class="h">In the cellar with the cellar master</span>Bâtonnage on the barrel kept for the workshops, or three tastings from the barrel with the wine thief, the tool that draws wine from the wood.</li>
+      <li><span class="t">11:40</span><span class="h">The Vino Santo racks</span>Nosiola grapes drying on wooden racks until Holy Week, and a taste of Vino Santo.</li>
+      <li><span class="t">12:00</span><span class="h">Tasting board and questions</span>Trentingrana, mountain cheese, speck, bread and apples. Ends at 12:30 pm.</li>
+    </ol>
+
+    <h2>Next dates</h2>
+    <p>Trial month, February 2027, tasting from the barrel:</p>
+    <ul class="dates"><li>Sat 6 February</li><li>Sat 13 February</li><li>Sat 20 February</li><li>Sat 27 February</li></ul>
+
+    <div class="book">
+      <h2>Book</h2>
+      <p>Booking required, by the day before. In the form, pick the date marked “Laboratorio «Dalla botte»”.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRRuEzkueoJTZQO_9tpZluv4aSrkr-SVrUVfNPGtsPsu3Hw/viewform?hl=en" target="_blank" rel="noopener">Book online</a>
+      <p>Or write to <a class="mail" href="mailto:cantinavalledeilaghi@gmail.com">cantinavalledeilaghi@gmail.com</a></p>
+      <p>Phone: <a class="mail" href="tel:+393317585552">+39 331 758 5552</a></p>
+      <p class="gift">Give it as a gift: a voucher for two people, €80, valid until 31 March. Ask at the winery or by email.</p>
+    </div>
+
+    <h2>Good to know</h2>
+    <ul class="plain">
+      <li>Tastings are for adults only (18+).</li>
+      <li>For hygiene we work only on the dedicated barrel, with sanitised tools: please wash your hands before we start.</li>
+      <li>The cellar is cool even in winter: bring a jacket and comfortable shoes.</li>
+      <li>Drivers can ask for an alcohol-free alternative.</li>
+      <li>Address: Via Linfano, 81, 38062 Arco (TN). The car park is behind the winery.</li>
+    </ul>
+    <p style="margin-top:10px">Please drink responsibly.</p>
+    <footer>Prototype made for the challenge "L'enoturismo in cantina" · Informatica di base, University of Trento, 2026.</footer>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var langs = ["it", "de", "en"];
+    var sections = document.querySelectorAll("section[data-lang]");
+    var buttons = document.querySelectorAll(".langs button");
+    var backs = document.querySelectorAll("a[data-back]");
+    function show(l) {
+      if (langs.indexOf(l) < 0) l = "it";
+      sections.forEach(function (s) { s.hidden = s.getAttribute("data-lang") !== l; });
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-l") === l)); });
+      backs.forEach(function (a) { a.href = "./#" + l; });
+      document.documentElement.lang = l;
+    }
+    function fromHash() {
+      var h = (location.hash || "").replace("#", "");
+      if (langs.indexOf(h) >= 0) return h;
+      var nav = (navigator.language || "it").slice(0, 2).toLowerCase();
+      return langs.indexOf(nav) >= 0 ? nav : "it";
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var l = b.getAttribute("data-l");
+        show(l);
+        try { location.hash = l; } catch (e) {}
+      });
+    });
+    window.addEventListener("hashchange", function () { show(fromHash()); });
+    show(fromHash());
+  })();
+</script>
+
+</body>
+</html>
